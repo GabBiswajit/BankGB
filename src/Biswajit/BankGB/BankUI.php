@@ -22,7 +22,6 @@ use pocketmine\event\player\PlayerJoinEvent;
 
 use pocketmine\utils\Config;
 
-
 class BankUI extends PluginBase implements Listener{
 
     private static $instance;
@@ -47,7 +46,6 @@ class BankUI extends PluginBase implements Listener{
         if (date("H:i") === "12:00"){
             foreach (glob($this->getDataFolder() . "Players/*.yml") as $players) {
                 $playerBankMoney = new Config($players);
-                //$player = basename($players, ".yml");
                 $interest = ($this->getConfig()->get("interest-rates") / 100 * $playerBankMoney->get("Money"));
                 $playerBankMoney->set("Money", round($playerBankMoney->get("Money") + $interest));
                 $playerBankMoney->save();
