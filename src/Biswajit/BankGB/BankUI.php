@@ -29,9 +29,8 @@ class BankUI extends PluginBase implements Listener{
     public $player;
     public $playerList = [];
 
-    public function onEnable(): void
-    {
-		$this->getLogger()->info("§aPlugin Bank!! §eMade By Biswajit");
+    public function onEnable(): void {
+	    
         $this->saveDefaultConfig();
         self::$instance = $this;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
