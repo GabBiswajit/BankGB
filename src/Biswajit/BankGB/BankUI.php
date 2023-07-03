@@ -4,8 +4,8 @@ namespace Biswajit\BankGB;
 
 use Biswajit\BankGB\InterestTask;
 use onebone\economyapi\EconomyAPI;
-use Vecnavium\FormsUI\SimpleForm;
-use Vecnavium\FormsUI\CustomForm;
+use Biswajit\BankGB\libsjojoe77777\FormAPI\SimpleForm;
+use Biswajit\BankGB\libs\jojoe77777\FormAPI\CustomForm;
 
 use pocketmine\block\Block;
 use pocketmine\command\utils\InvalidCommandSyntaxException;
