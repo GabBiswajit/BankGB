@@ -1,0 +1,17 @@
+---
+main: Biswajit\BankUI\BankUI
+name: BankUi
+version: 1.2.0
+api: 5.0.0
+Author: Biswajit
+depend:
+- EconomyAPI
+commands:
+  bank:
+    description: Bank Permission
+    permission: bankui.admin
+permissions:
+  bankui.admin:
+    description: Permission to view other players transactions
+    default: true
+...
