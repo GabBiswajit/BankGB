@@ -1,9 +1,9 @@
 <?php
 
-namespace Biswajit\BankUI;
+namespace Biswajit\BankGB;
 
 use Cassandra\Time;
-use Biswajit\BankUI\BankUI;
+use Biswajit\BankGB\BankUI;
 
 use pocketmine\scheduler\Task;
 use pocketmine\Player;
