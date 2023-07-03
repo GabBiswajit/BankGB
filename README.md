@@ -13,7 +13,7 @@ Player Commands
  - /bank
 
 # Important
-- This plugin requires the latest version of EconomyAPI And FormsUI!
+- This plugin requires the latest version of EconomyAPI!
 # Images
 ![Bank5](https://user-images.githubusercontent.com/34932094/124204221-37c3c280-daa4-11eb-826f-8c6511cf9649.png)
 ![Bank2](https://user-images.githubusercontent.com/34932094/122729370-b7e55f00-d23e-11eb-8aa6-1d8e8b47e70f.PNG)
