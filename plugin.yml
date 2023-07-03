@@ -1,5 +1,5 @@
 ---
-main: Biswajit\BankUI\BankUI
+main: Biswajit\BankUI\BankGB
 name: BankUi
 version: 1.2.0
 api: 5.0.0
