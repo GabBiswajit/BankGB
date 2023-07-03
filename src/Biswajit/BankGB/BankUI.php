@@ -1,8 +1,8 @@
 <?php
 
-namespace Biswajit\BankUI;
+namespace Biswajit\BankGB;
 
-use Biswajit\BankUI\InterestTask;
+use Biswajit\BankGB\InterestTask;
 use onebone\economyapi\EconomyAPI;
 use Vecnavium\FormsUI\SimpleForm;
 use Vecnavium\FormsUI\CustomForm;
