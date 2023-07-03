@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Vecnavium\SkyBlocksPM\libs\jojoe77777\FormAPI;
+namespace Biswajit\BankGB\libs\jojoe77777;
 
 use pocketmine\form\FormValidationException;
 use function count;
