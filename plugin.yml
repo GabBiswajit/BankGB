@@ -1,6 +1,6 @@
 ---
 main: Biswajit\BankGB\BankUI
-name: BankUi
+name: BankGB
 version: 1.2.0
 api: 5.0.0
 Author: Biswajit
