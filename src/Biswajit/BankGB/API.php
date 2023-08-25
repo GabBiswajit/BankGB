@@ -32,11 +32,6 @@ class API
   /** @var BankGB */
   private $source;
   
-  /** @var Config */
-  public $players;
-  
-  /** @var Config */
-  public $config;
   
   public function __construct(BankGB $source)
   {
@@ -123,7 +118,7 @@ class API
       {
         if($amount >= 1)
         {
-          if(!array_key_exists($playerName_1, Eventhandler::getInstance()->interest))
+          if(!array_key_exists($playerName, Eventhandler::getInstance()->interest))
           {
             EventHandler::getInstance()->interest[$playerName] =  $this->getSource()->getScheduler()->scheduleRepeatingTask(new InterestTask($this->source, $playerName), 72000);
           }
@@ -137,26 +132,31 @@ class API
   
   public function reduceBankMoney($player, int $amount): bool
   {
-    if($player instanceof Player)
+  if ($player instanceof Player)
+  {
+    $playerName = $player->getName();
+    $money = $this->getBankMoney($player);
+    $total = $money - $amount;
+    $playerFile = $this->getSource()->getPlayerFile($playerName);
+    $playerFile->setNested("Bank.Money", $total);
+    $playerFile->save();
+    if ($total === 0)
     {
-      $playerName = $player->getName();
-      $money = $this->getBankMoney($player);
-      $total = $money - $amount;
-      $playerFile = $this->getSource()->getPlayerFile($playerName);
-      $playerFile->setNested("Bank.Money", $total);
-      $playerFile->save();
-      if($total === 0)
+      if (array_key_exists($playerName, Eventhandler::getInstance()->interest))
       {
-        if(array_key_exists($playerName, Eventhandler::getInstance()->interest))
-        {
-          EventHandler::getInstance()->interest[$playerName]->cancel();
-        }
+        EventHandler::getInstance()->interest[$playerName]->cancel();
+      }
       return true;
-    }else{
+    }
+    else
+    {
       return false;
     }
-   }
+  }else
+  {
+    return false;
   }
+}
   
   public function getLoanMerit($player)
   {
