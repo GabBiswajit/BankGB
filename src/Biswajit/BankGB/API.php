@@ -66,7 +66,7 @@ class API
   /** @var API */
   private static $instance;
   
-  /** @var Biswajit\BankGB */
+  /** @var BankGB */
   private $source;
   
   /** @var Config */
