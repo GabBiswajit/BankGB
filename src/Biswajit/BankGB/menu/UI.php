@@ -447,7 +447,7 @@ class UI
                           {
                             $this->source->getInstance()->loanTask[$playerName] = $this->source->getInstance()->getScheduler()->scheduleRepeatingTask(new LoanTask($this->source, $player->getName(), 1), 20);
                           }
-                    l      $player->sendMessage("§aSuccessfully Payed A Total Of §e$result$");
+                          $player->sendMessage("§aSuccessfully Payed A Total Of §e$result$");
                         }else{
                           $player->sendMessage("§cyou have not taken loan");
                         }
