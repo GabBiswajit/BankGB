@@ -1,25 +1,27 @@
-# Information 
+## Information 
  - This plugin allows players to store their money in a bank.
-# Features 
+ 
+## Features 
  - Withdraw Money into Bank
  - Deposit Money from Bank
  - Transfer Money to Other Players Bank Accounts
- - Transaction Log
+ - Loan System !
  - Daily Interest
  - Configurable Interest Rates
- - EconomyApi Support
-# Command
-Player Commands
- - /bank
+ - Bedrockeconomy Support
 
-# Important
-- This plugin requires the latest version of EconomyAPI!
+## Important
+- This plugin requires the latest version of Bedrockeconomy!
+
 # Images
-![Bank5](https://user-images.githubusercontent.com/34932094/124204221-37c3c280-daa4-11eb-826f-8c6511cf9649.png)
-![Bank2](https://user-images.githubusercontent.com/34932094/122729370-b7e55f00-d23e-11eb-8aa6-1d8e8b47e70f.PNG)
-![Bank3](https://user-images.githubusercontent.com/34932094/122729371-b7e55f00-d23e-11eb-8a94-ee292bab50f8.PNG)
-![Bank4](https://user-images.githubusercontent.com/34932094/122729372-b7e55f00-d23e-11eb-9a8c-f44571718108.PNG)
-![Bank6](https://user-images.githubusercontent.com/34932094/124215248-48cafe80-dab9-11eb-930d-df1b113a7d3d.PNG)
-![Admin](https://user-images.githubusercontent.com/34932094/141248349-65d9629c-2e30-42d3-aa4a-d05909c5908e.PNG)
-# Permissions
-- bankui.admin
+![IMG_20230825_145421](https://github.com/GabBiswajit/BankGB/assets/121815367/b111726b-9f71-4b29-a763-234264db2cf2)
+![IMG_20230825_145359](https://github.com/GabBiswajit/BankGB/assets/121815367/766e794a-1066-4c64-9aa5-00fe881d0ed3)
+![IMG_20230825_145340](https://github.com/GabBiswajit/BankGB/assets/121815367/a10df699-f7d6-48d8-a3f8-3406f28cc994)
+![IMG_20230825_145322](https://github.com/GabBiswajit/BankGB/assets/121815367/1ef0c37a-7c1e-417d-bdf2-07f4714f209b)
+![IMG_20230825_145303](https://github.com/GabBiswajit/BankGB/assets/121815367/13d69740-91c3-45a6-9292-d8c9385c7bc4)
+
+## Commands
+|**Command**|**Description**|
+|-----------|---------------|
+|`/bank`|Open BankGB Menu|
+|`/setbankmoney`|Set A Player Bank Money|
