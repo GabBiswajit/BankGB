@@ -179,7 +179,7 @@ class BankGB extends PluginBase implements Listener{
                     $this->withdrawCustomForm($player);
             }
         });
-      }
+      });
         $form->setTitle("§l§cWITHDRAW");
         $form->setContent("§r§eBalance: §6$" . $playerBankMoney->get("Money"));
         $form->addButton("§l§bWITHDRAW ALL\n§l§d» §r§8Click To Withdraw", 1, "https://cdn-icons-png.flaticon.com/512/883/883887.png");
@@ -228,7 +228,7 @@ class BankGB extends PluginBase implements Listener{
             $playerBankMoney->set("Money", $playerBankMoney->get("Money") - $data[1]);
             $playerBankMoney->save();
         });
-    }
+    });
         $form->setTitle("§lWithdrawal");
         $form->addLabel("Money in the bank: " . $playerBankMoney->get("Money"));
         $form->addInput("§rEnter max", "100000");
@@ -265,7 +265,7 @@ class BankGB extends PluginBase implements Listener{
                     $player->sendMessage("§aSuccessfully saved" . $playerMoney . " In Bank");
                     libEco::reduceMoney($player, $playerMoney, function() : void {});
                     $playerBankMoney->save();
-             }
+             });
             }
             switch ($result) {
                 case 1;
@@ -286,14 +286,14 @@ class BankGB extends PluginBase implements Listener{
                     $amount = (int) $playerMoney / 2;
                     libEco::reduceMoney($player, $amount, function() : void {});
                     $playerBankMoney->save();
-              }
+              });
             }
             switch ($result) {
                 case 2;
                     $this->depositCustomForm($player);
             }
         });
-   }
+   });
         $form->setTitle("§l§cDEPOSIT");
         $form->setContent("§r§eBalance: §6$" . $playerBankMoney->get("Money"));
         $form->addButton("§l§bDEPOSIT ALL\n§l§d» §r§8Click To Deposit", 1, "https://cdn-icons-png.flaticon.com/512/4825/4825116.png");
@@ -337,7 +337,7 @@ class BankGB extends PluginBase implements Listener{
             libEco::reduceMoney($player, $data[1], function() : void {});
             $playerBankMoney->save();
         });
-    }
+    });
         $form->setTitle("§lStorage");
         $form->addLabel("Money:" . $playerBankMoney->get("Money"));
         $form->addInput("§rEnter max", "100000");
@@ -408,7 +408,7 @@ class BankGB extends PluginBase implements Listener{
             $playerBankMoney->save();
             $otherPlayerBankMoney->save();
             });
-       }
+       });
   
         $form->setTitle("§lTransfer");
         $form->addLabel("Money in bank: " . $playerBankMoney->get("Money"));
@@ -428,7 +428,7 @@ class BankGB extends PluginBase implements Listener{
                 return true;
             }
         });
-     }
+     });
         $form->setTitle("§lTransfer");
         if ($playerBankMoney->get('Transactions') === 0){
             $form->setContent("You have not made any transactions yet");
