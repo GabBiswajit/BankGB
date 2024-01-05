@@ -143,7 +143,7 @@ class BankGB extends PluginBase implements Listener{
                     $playerBankMoney = new Config($this->getDataFolder() . "Players/" . $player->getName() . ".yml", Config::YAML);
                     if ($playerBankMoney->get("Money") == 0){
                         $player->sendMessage("§aYou Don't Have Any Money In The Bank To Withdraw");
-                        return true;
+                        return;
                     }
                     libEco::addMoney($player, $playerBankMoney->get("Money"));
                     $player->sendMessage("§aSuccessfully Withdraw " . $playerBankMoney->get("Money") . " From The Bank");
@@ -161,7 +161,7 @@ class BankGB extends PluginBase implements Listener{
                     $playerBankMoney = new Config($this->getDataFolder() . "Players/" . $player->getName() . ".yml", Config::YAML);
                     if ($playerBankMoney->get("Money") == 0){
                         $player->sendMessage("§aYou have no money");
-                        return true;
+                        return;
                     }
                     libEco::addMoney($player, $playerBankMoney->get("Money") / 2);
                     $player->sendMessage("§aSuccessfully pull" . $playerBankMoney->get("Money") /2 . " From bank");
@@ -197,7 +197,7 @@ class BankGB extends PluginBase implements Listener{
         $form = new CustomForm(function (Player $player, $data) {
             $result = $data;
             if ($result === null) {
-                return true;
+                return;
             }
 
             $playerBankMoney = new Config($this->getDataFolder() . "Players/" . $player->getName() . ".yml", Config::YAML);
@@ -207,15 +207,15 @@ class BankGB extends PluginBase implements Listener{
             }
             if ($playerBankMoney->get("Money") < $data[1]){
                 $player->sendMessage("§aYou don't have much money to withdraw" . $data[1]);
-                return true;
+                return;
             }
             if (!is_numeric($data[1])){
                 $player->sendMessage("§aEnter the correct number!");
-                return true;
+                return;
             }
             if ($data[1] <= 0){
                 $player->sendMessage("§aYou must enter an amount greater than 0");
-                return true;
+                return;
             }
             libEco::addMoney($player, $data[1]);
             $player->sendMessage("§aSuccessfully withdraw " . $data[1] . " Form Bank");
@@ -245,7 +245,7 @@ class BankGB extends PluginBase implements Listener{
         $form = new SimpleForm(function (Player $player, int $data = null){
             $result = $data;
             if ($result === null) {
-                return true;
+                return;
             }
             switch ($result) {
                 case 0;
@@ -253,7 +253,7 @@ class BankGB extends PluginBase implements Listener{
                     $playerBankMoney = new Config($this->getDataFolder() . "Players/" . $player->getName() . ".yml", Config::YAML);
                     if ($playerMoney == 0){
                         $player->sendMessage("§aYou don't have enough money to save");
-                        return true;
+                        return;
                     }
                     if ($playerBankMoney->get('Transactions') === 0){
                         $playerBankMoney->set('Transactions', date("§b[d/m/y]") . "§e - §aDeposited $" . $playerMoney . "\n");
@@ -273,7 +273,7 @@ class BankGB extends PluginBase implements Listener{
                     $playerBankMoney = new Config($this->getDataFolder() . "Players/" . $player->getName() . ".yml", Config::YAML);
                     if ($playerMoney == 0){
                         $player->sendMessage("§aYou don't have much money to save");
-                        return true;
+                        return;
                     }
                     if ($playerBankMoney->get('Transactions') === 0){
                         $playerBankMoney->set('Transactions', date("§b[d/m/y]") . "§e - §aDeposited $" . $playerMoney / 2 . "\n");
@@ -311,20 +311,20 @@ class BankGB extends PluginBase implements Listener{
         $form = new CustomForm(function (Player $player, $data) {
             $result = $data;
             if ($result === null) {
-                return true;
+                return;
             }
             $playerBankMoney = new Config($this->getDataFolder() . "Players/" . $player->getName() . ".yml", Config::YAML);
             if ($playerMoney < $data[1]){
                 $player->sendMessage("§aYou don't have enough money to save" . $data[1] . " ke Bank");
-                return true;
+                return;
             }
             if (!is_numeric($data[1])){
                 $player->sendMessage("§aEnter the correct number");
-                return true;
+                return;
             }
             if ($data[1] <= 0){
                 $player->sendMessage("§aEnter a number starting from 0");
-                return true;
+                return;
             }
             $player->sendMessage("§aManaged to save Rp" . $data[1] . " ke Bank");
             if ($playerBankMoney->get('Transactions') === 0){
@@ -361,12 +361,12 @@ class BankGB extends PluginBase implements Listener{
         $form = new CustomForm(function (Player $player, $data) {
             $result = $data;
             if ($result === null) {
-                return true;
+                return;
             }
 
             if (!isset($this->playerList[$player->getName()][$data[1]])){
                 $player->sendMessage("§aYou have to choose the right player");
-                return true;
+                return;
             }
 
             $index = $data[1];
@@ -376,19 +376,19 @@ class BankGB extends PluginBase implements Listener{
             $otherPlayerBankMoney = new Config($this->getDataFolder() . "Players/" . $playerName . ".yml", Config::YAML);
             if ($playerBankMoney->get("Money") == 0){
                 $player->sendMessage("§aYou don't have money in the bank");
-                return true;
+                return;
             }
             if ($playerBankMoney->get("Money") < $data[2]){
                 $player->sendMessage("§aYou don't have enough money to transfer as big Rp" . $data[2]);
-                return true;
+                return;
             }
             if (!is_numeric($data[2])){
                 $player->sendMessage("§aEnter a number");
-                return true;
+                return;
             }
             if ($data[2] <= 0){
                 $player->sendMessage("§eYou must send a minimum. 1");
-                return true;
+                return;
             }
             $player->sendMessage("§aSuccessful transfer Rp" . $data[2] . " into " . $playerName . "'s ke Bank lain");
             if ($this->getServer()->getPlayerExact($playerName)) {
@@ -425,7 +425,7 @@ class BankGB extends PluginBase implements Listener{
         $form = new SimpleForm(function (Player $player, int $data = null){
             $result = $data;
             if ($result === null) {
-                return true;
+                return;
             }
         });
      });
@@ -463,7 +463,7 @@ class BankGB extends PluginBase implements Listener{
         return $form;
     }
 
-    public static function getInstance(): BankUI {
+    public static function getInstance(): BankGB {
         return self::$instance;
     }
 
