@@ -1,21 +1,18 @@
+---
+main: Biswajit\BankGB\BankUI
 name: BankGB
-author: Biswajit
-api: 5.0.0
-version: 1.1.0
-main: Biswajit\BankGB\BankGB
-
+version: 1.2.0
+api:
+- 5.0.0
+Author: Biswajit
+depend:
+- EconomyAPI
 commands:
   bank:
-    description: "Bank Command"
-    permission: "BankGB.bank.cmd"
-  setbankmoney:
-    description: "setbankmoney Command"
-    permission: "BankGB.setbankmoney.cmd"
-    
+    description: Bank Permission
+    permission: bankgb.bank.cmd
 permissions:
-  BankGB.bank.cmd:
-    description: "Bank Permission"
+  bankgb.bank.cmd:
+    description: Permission to view other players transactions
     default: true
-  BankGB.setbankmoney.cmd:
-    description: "setbankmoney Permission"
-    default: op￼Enter
+...
