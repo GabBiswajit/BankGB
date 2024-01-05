@@ -3,7 +3,7 @@
 namespace Biswajit\BankGB;
 
 use Biswajit\BankGB\InterestTask;
-use davidglitch04\libEco\libEco
+use davidglitch04\libEco\libEco;
 use jojoe77777\SimpleForm;
 use jojoe77777\CustomForm;
 
