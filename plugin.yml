@@ -5,8 +5,8 @@ version: 1.2.0
 api:
 - 5.0.0
 Author: Biswajit
-depend:
-- EconomyAPI
+softdepend: ["BedrockEconomy", "EconomyAPI"]
+
 commands:
   bank:
     description: Bank Permission
